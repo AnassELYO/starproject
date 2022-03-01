@@ -1,56 +1,25 @@
-<style>
-    .container {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    .stars img {
-        height: 200px;
-        width: 200px;
-        border-radius: 100%;
-    }
+@extends('layouts.base')
 
-    .stars {
-        display: flex;
-        flex-direction: column;
-        background-color: darkgreen;
-        width: 80%;
-    }
-
-    .star{
-        display: flex;
-        background-color: darkgray;
-    }
-
-    .stars button{
-        width: 25%;
-    }
-
-    li {
-        list-style: none;
-    }
-    
-    .menu {
-        display: flex;
-    }
-</style>
-<script src="../js/script.js" defer></script>
-<script src="../js/app.js" defer></script>
-
-<div class="container" >
-    <div class="stars" x-data="tabs('tab{{$stars[0]->id}}')">
+@section('content')
+<div class="mb-3 md:pr-36 flex justify-center">
+    <h1 class="font-bold text-3xl">Profile Browser</h1>
+</div>
+<div class="flex" x-data="tabs('tab{{$stars[0]->id}}')">
+    <div class="flex flex-col">
         @foreach($stars as $star)
-        <div class="menu">
-            <button href="#tab{{$star->id}}" @click="toggleTab">{{$star->name}}</button>
-        </div>
+        <button href="#tab{{$star->id}}" @click="toggleTab" class=" pl-2 flex flex-start max-h-20 whitespace-nowrap border border-slate-500 rounded-l-lg bg-slate-300 focus focus:bg-white rounded hover:bg-gray-200 ">{{$star->name}}</button>
+        @endforeach
+    </div>
+    <div class="h-full">
+        @foreach($stars as $star)
         <template x-if="isActive('tab{{$star->id}}')">
-            <div class="star">
-                <img src="{{$star->image}}" alt="starImage">
-                <p>{{$star->first_name}}</p>
-                <p>{{$star->description}}</p>
+            <div class="max-w-lg ml-6 max-h-12">
+                <img src="{{$star->image}}" class="w-1/2 float-left rounded-extraLarge object-cover md:w-1/4" alt="starImage">
+                <p class="font-bold mb-1.5">{{$star->first_name}}</p>
+                <p class="text-xs md:text-base">{{$star->description}}</p>
             </div>
         </template>
         @endforeach
     </div>
-    
 </div>
+@endsection

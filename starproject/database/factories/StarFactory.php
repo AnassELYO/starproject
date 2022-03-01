@@ -19,8 +19,8 @@ class StarFactory extends Factory
         return [
             'name' => $this->faker->name,
             'first_name' => $this->faker->firstName,
-            'image' => 'https://thispersondoesnotexist.com/image',
-            'description' => $this->faker->paragraph,
+            'image' => $this->faker->imageUrl(640,480,'Star'),
+            'description' => $this->faker->paragraph(15),
         ];
     }
 }

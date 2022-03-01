@@ -11,7 +11,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="antialiased">
-        <div class="relative flex flex-col items-top mt-12 sm:justify-center min-h-screen sm:items-center py-4 sm:pt-0">
+        <div class="relative flex flex-col items-top mt-12 md:mt-px sm:justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="fixed top-0 right-0 px-6 py-4 sm:block bg-white">
                     @auth

@@ -71,6 +71,11 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @if(Auth::user()->admin)
+                    <x-nav-link :href="route('admin.star.index')" :active="request()->routeIs('admin.star.index')">
+                        Admin Dashboard
+                    </x-nav-link>
+                    @endif
         </div>
 
         <!-- Responsive Settings Options -->

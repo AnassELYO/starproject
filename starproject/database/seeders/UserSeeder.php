@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    { /* A l'appel de cette classe (dans le DatabaseSeeder), permet de créer un utilisateur administrateur */
         DB::table('users')->insert([
             'name' => 'admin',
             'email' => 'admin@admin.com',

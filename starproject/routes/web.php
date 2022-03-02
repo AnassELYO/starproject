@@ -22,10 +22,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-/* Admin  */ 
+/* Admin  middleware qui va verifier si le compte connecté est bien administrateur.*/ 
 Route::middleware(['admin'])->name('admin.')->prefix('admin')->group(function () {
     Route::resource('star', AdminStarController::class)->shallow();
 });
-
+/* Route::resource permet de definir les routes principales pour un crud, accessible avec un php artisan route:list  */
 
 require __DIR__.'/auth.php';

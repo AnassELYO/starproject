@@ -15,7 +15,7 @@ class StarFactory extends Factory
     protected $model = Star::class;
 
     public function definition()
-    {
+    { /* A l'appel de la classe, permet de generer une Star avec des données fictives realiste grace à la librairie Faker */
         return [
             'name' => $this->faker->name,
             'first_name' => $this->faker->firstName,

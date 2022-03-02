@@ -14,9 +14,4 @@ class StarController extends Controller
             return view('stars', compact('stars'));
     }
 
-    public function adminAllStars()
-    {
-        $stars = Star::all();
-        return view('admin_area', compact('stars'));
-    }
 }

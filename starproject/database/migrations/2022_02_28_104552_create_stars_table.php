@@ -12,7 +12,7 @@ class CreateStarsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { /*Permet de creer la table stars avec les champs ci dessous */
         Schema::create('stars', function (Blueprint $table) {
             $table->id();
             $table->string('name');

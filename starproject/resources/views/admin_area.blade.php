@@ -4,7 +4,6 @@
             {{ __('Admin Dashboard') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -23,20 +22,22 @@
                                     <img src="{{$star->image}}" class="w-1/5 " alt="starImage">
                                     <p class="font-bold mb-1.5">{{$star->first_name}}</p>
                                     <p class="text-xs md:text-base">{{$star->description}}</p>
-                                    <div class="flex">
+                                    <div class="flex"> <!-- nom de route avec en parametre l'id de la star qu'on souhaite modifier -->
                                         <a href="{{route ('admin.star.edit', $star->id)}}" class="w-40 border border-1 border-black bg-amber-300 hover:bg-amber-400 text-center"><button>Edit</button></a>
-                                        <form action="{{ route('admin.star.destroy', $star->id) }}" method="post" class="">
+                                        <form action="{{ route('admin.star.destroy', $star->id) }}" method="post" class=""> <!-- nom de route avec en parametre l'id de la star qu'on souhaite supprimer -->
                                             @method('DELETE')
                                             @csrf
                                             <button class="w-40 border border-1 border-black bg-red-500 hover:bg-red-700" onclick="return confirm('Are you sure?')" type="submit">Delete</button>
                                         </form>
+                                        <a href="{{route('admin.star.create')}}" class="w-40 border border-1 border-black bg-lime-400 hover:bg-lime-500 text-center"><button>Create</button></a>
                                     </div>
-
                                 </div>
                             </template>
                             @endforeach
                         </div>
                     </div>
+                    @else <!-- condition pour afficher le bouton créer si pas de stars en bdd -->
+                    <a href="{{route('admin.star.create')}}" class="w-40 border border-1 border-black bg-lime-400 hover:bg-lime-500 text-center"><button>Create</button></a>
                     @endif
                 </div>
             </div>

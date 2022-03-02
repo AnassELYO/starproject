@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\StarController as AdminStarController;
 use App\Http\Controllers\StarController;
 
 
@@ -22,9 +23,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 /* Admin  */ 
-Route::get('/admin', function () {
-    return view('admin_area');
-})->middleware(['admin'])->name('admin');
+Route::middleware(['admin'])->name('admin.')->prefix('admin')->group(function () {
+    Route::resource('star', AdminStarController::class)->shallow();
+});
 
 
 require __DIR__.'/auth.php';

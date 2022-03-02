@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('accueil') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @if(Auth::user()->admin)
-                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                    <x-nav-link :href="route('admin.star.index')" :active="request()->routeIs('admin.star.index')">
                         Admin Dashboard
                     </x-nav-link>
                     @endif

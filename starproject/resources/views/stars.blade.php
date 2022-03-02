@@ -3,7 +3,7 @@
 @section('content')
 <div class="mb-3 md:pr-36 flex justify-center">
     <h1 class="font-bold text-3xl">Profile Browser</h1>
-</div>
+</div>@if(count($stars) >=1)
 <div class="flex" x-data="tabs('tab{{$stars[0]->id}}')">
     <div class="flex flex-col">
         @foreach($stars as $star)
@@ -22,4 +22,5 @@
         @endforeach
     </div>
 </div>
+@endif
 @endsection

@@ -6,6 +6,8 @@
 
  Generer une *clé d'application* en utilisant la commande **php artisan key:generate**
 
+ Creer un lien symbolique vers le disque local *pour les images* en utilisant la commande **php artisan storage:link**
+
  Utiliser la commande **php artisan migrate** (afin de **créer les tables** dans la base de donnée)
 
  Utiliser la commande **php artisan db:seed** pour **inserer des données** : 

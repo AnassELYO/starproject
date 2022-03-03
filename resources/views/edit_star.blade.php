@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <form action="{{ route('admin.star.update', $star->id) }}" method="post" class="flex flex-col justify-center items-center my-5">
+                <form action="{{ route('admin.star.update', $star->id) }}" enctype="multipart/form-data" method="post" class="flex flex-col justify-center items-center my-5">
                     <input type="hidden" name="id" value="{{$star->id}}"> <!-- champ caché pour récuperer l'id -->
                     <div class="mb-3 flex  items-center justify-center">
                         <label for="name" class="mr-6 lg:mr-12">Name:</label>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="mb-3 flex  items-center justify-center">
                         <label for="name" class="mr-6 lg:mr-12">Image:</label>
-                        <input type="url" class="h-8 @error('image') is-invalid @enderror" name="image" required value="{{$star->image}}">
+                        <input type="file" class="h-8 @error('image') is-invalid @enderror" name="image" accept="image/png, image/jpeg, image/jpg" required >
                         @error('image')
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">{{ $message }}</div>
                         @enderror

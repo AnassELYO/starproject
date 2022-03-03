@@ -19,7 +19,7 @@
                             @foreach($stars as $star)
                             <template x-if="isActive('tab{{$star->id}}')">
                                 <div class="">
-                                    <img src="{{$star->image}}" class="w-1/5 " alt="starImage">
+                                    <img src="{{$star->image}}" class="w-32 h-32 object-cover " alt="starImage">
                                     <p class="font-bold mb-1.5">{{$star->first_name}}</p>
                                     <p class="text-xs md:text-base">{{$star->description}}</p>
                                     <div class="flex"> <!-- nom de route avec en parametre l'id de la star qu'on souhaite modifier -->

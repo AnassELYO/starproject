@@ -16,7 +16,7 @@ class Star extends Model
     public static $validateFields = [
         'name' => 'required|string',
         'first_name' => 'required|string',
-        'image' => 'required|string',
+        'image' => 'required|image',
         'description' => 'required|string'
     ];
 }

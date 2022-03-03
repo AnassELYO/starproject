@@ -7,6 +7,7 @@ use App\Models\Star;
 
 class DatabaseSeeder extends Seeder
 {
+    
     /**
      * Seed the application's database.
      *
@@ -14,10 +15,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Star::factory()->count(8)->create();
         $this->call([
             UserSeeder::class,
+            StarSeeder::class
         ]);
-        
     }
 }

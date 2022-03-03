@@ -12,6 +12,6 @@
 
  Utiliser la commande **php artisan db:seed** pour **inserer des données** : 
  - compte administrateur **email** : ***admin@admin.com*** , **mot de passe** : ***password***
- - *stars fictives*
+ - *stars*
 
  Utiliser la commande **php artisan serve** et se rendre sur l'url : *http://localhost:8000*
